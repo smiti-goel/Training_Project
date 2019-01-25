@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+         <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+            <!-- Popper JS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="/home/sm.goel/training/project/style/style.css">
+    </head>
+    <body ng-app="myApp">
+        <div class="container" ng-controller="regctrl">
+        <div ng-init="load()">
+           
+               
+             <form class="myform">
+                <fieldset>
+                 <legend><h1>Registration Form</h1></legend>
+                <label>Id :-</label><br>
+                <input type="text" ng-model="newData.id" id="id" required><br>
+                <label>Name :-</label><br>
+                <input type="text" ng-model="newData.name" id="name"required><br>
+                <label>Email :-</label><br>
+                <input type="email" ng-model="newData.email" id="email" required><br>
+                <label>city :-</label><br>
+                <input type="text" ng-model="newData.city" id="city" required><br><br>
+                <input type = "file" ng-src={{src}} required><br><br>
+                <input type="button"  value="Submit" ng-click="regform()">
+                <input type="reset"  value="Reset">
+                <!-- <p>Your id: {{id}}</p>
+                <p>Your name: {{name}}</p>
+                <p>Your email: {{email}}</p>
+                <p>Your city: {{city}}</p>     -->
+            </fieldset>
+            </form>
+     
+            <hr><hr>
+            <div>
+                <table id="mytable" >
+                    <tr>
+                        <td>ID</td>
+                        <td>NAME</td>
+                        <td>EMAIL</td>
+                        <td>CITY</td>
+                        <td>Image</td>
+                        <td>DELETE</td>
+                        <td>EDIT</td>
+                    </tr>
+                    <tr ng-repeat="entry in record">
+                        <td>{{entry.id}}</td>
+                        <td>{{entry.name}}</td>
+                        <td>{{entry.email}}</td>
+                        <td>{{entry.city}}</td>
+                        <td>{{entry.sr}}</td>
+                        <td><input type="button" value="edit" ng-click="editf($index)"></td>
+                        <td><input type="button" value="delete" ng-click="delf($index)"></td>
+                    </tr>
+                </table>
+            </div>            
+        </div>
+        </div>
+        <script>
+        
+            var i=0;
+            var total;
+            var app=angular.module("myApp",[]);
+            app.controller("regctrl",function($scope)
+            { 
+                //record is an array of objects
+                $scope.record=[];
+                $scope.up=[];
+                // [
+                //     {id:1,name:"smiti",email:"smiti@gmail.com",city:"mzn"},
+                //     {id:2,name:"tanvi",email:"tanvi@gmail.com",city:"merrut"}];
+                    //here we are creating a function that will be called on the click event event
+                    $scope.regform=function(){
+                  
+
+                     if(JSON.parse(localStorage.getItem("data"))!=null){
+                        $scope.record=JSON.parse(localStorage.getItem("data"));
+                     }
+                    if(localStorage.getItem("count")!=null){
+                        i=localStorage.getItem("count");
+                    }i++;
+                    $scope.record.push($scope.newData);
+                    $scope.newData=null;
+                   localStorage.setItem("data", JSON.stringify($scope.record));
+                   localStorage.setItem("count",i);
+                   // temp is storing all the records data
+                       var temp=$scope.record;
+                        console.log("hiii angular");
+                        console.log(temp);
+
+                };
+                $scope.editf=function(idx){
+                    console.log("hi edit");
+                    // newData.id=entry.id;
+                    // console.log("hi edit id ");
+                    // newData.name=entry.name;
+                    // newData.email=entry.email;
+                    // newData.city=entry.city;
+                    var ei=idx;
+                    $scope.newData=$scope.record[ei];
+                    console.log("edited field index no is ");
+                    console.log(ei);
+                    $scope.record.splice(ei,1);
+                    var tempe=$scope.record;
+                    console.log(tempe);
+                    localStorage.setItem("data", JSON.stringify(tempe));
+                    var ce=JSON.parse(localStorage.getItem("count"));
+                    i=ce-1;
+                    localStorage.setItem("count",i);
+
+
+
+                };
+                     $scope.delf=function(idx){
+                     var temp2=$scope.record.splice(idx,1);
+                     console.log("hi delete");
+                     console.log(temp2);
+                     console.log("after delete");
+                     //console.log($scope.record);
+                     var di=idx;
+                     console.log("count"+""+di);
+                     var temparr=$scope.record;
+                    console.log(temparr);
+                    //$scope.up=record;
+                    localStorage.setItem("data", JSON.stringify(temparr));
+                    //count in localstorage is acc to id no starting from 1 n indexing in ls is starting frm 0
+                   // localStorage.setItem("count",di);
+                //   $scope.up=$scope.record=JSON.parse(localStorage.getItem("data"));
+                        var ct=JSON.parse(localStorage.getItem("count"));
+                        i= ct-1;
+                        localStorage.setItem("count",i);
+                };
+                $scope.load=function(){
+                    
+                 //   storedNames = JSON.parse(localStorage.getItem("data"));
+                    alert("window is loaded");
+                    if(JSON.parse(localStorage.getItem("data"))!=null)
+                    {
+                        $scope.record=JSON.parse(localStorage.getItem("data"));
+                     }
+
+
+                };
+              
+
+            });
+        
+        </script>
+
+
+
+
+    </body>
+</html>

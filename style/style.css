@@ -1,0 +1,59 @@
+.myform{
+   
+margin-left: 30%;
+   width: 50%; 
+}
+input[type=text],[type=email],[type=file]{
+    width: 50%;
+    border:2px solid rgb(122, 97, 145);
+    border-radius: 8px;
+    padding: 12px,20px;
+    margin:8px 0px;
+    height: 20px;
+
+}
+label{
+
+}
+
+#reset,#submit{
+    padding: 1%;
+    border-radius: 10px;
+    border-color: rgb(130, 100, 158);
+    width: 15%;
+    font-size: 110%;
+    font-family: cursive;
+
+}
+#id,#name,#email,#city{
+  
+}
+#mytable{
+    
+    border: 2px solid yellowgreen;
+    width: 70%;
+    padding:15px 15px 15px 15px;
+    margin:2% 18% ;
+    text-align: center;
+    border-collapse: collapse;
+
+}
+#mytable th,#mytable td{
+    
+    border: 1px solid yellowgreen;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 8px;
+}
+/* .btn{
+    position: fixed;
+   
+} */
+/* #del,#edit{
+position: fixed;
+
+border-radius: 10px;
+border-color: rgb(130, 100, 158);
+padding: 8px;
+font-family: cursive;
+} */

@@ -1,0 +1,13 @@
+<form><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)">
+<!-- <p>hiii</p> -->
+<!-- <p><label for="file" style="cursor: pointer;">Upload Image</label></p> 
+to output an image-->
+<p><img id="output" width="20" /></p>
+</form>
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>

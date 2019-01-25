@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> -->
+            <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="/home/sm.goel/training/project/style/style.css">
+</head> 
+<body onload="load()">  
+<form class="myform">
+<fieldset>
+    <legend> <h1>Registration Form</h1></legend> 
+     <label>Id:-</label> <br>
+        <input type="text" name="id" id="id" required><br>
+       <label> Name :-</label><br>
+        <input type="text" name="name" id="name" required><br>
+       <label> Email:-</label><br>
+        <input type="email" name="email" id="email" required> <br>
+        <label>City:-</label><br>
+        <input type="text" name="city" id="city" required>
+        <br><br>
+        <label>Upload Image</label><br>
+        <input type="file"  accept="image/*" name="image" id="file1" required>
+        <!-- <input type="file" accept="image/*" id="image" value="upload your image"> -->
+        <br><br>
+        <input type="reset" id="reset" name="reset">
+        <input type="button" id="submit" onclick="regform()" value="Submit">
+</fieldset>
+</form>
+<p id="demo"></p>
+<hr><hr>
+<!-- <table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+    </tr>
+</table> -->
+<div>
+<table id="mytable">
+    <tr>
+         <th contenteditable="false">Id</th>
+        <th contenteditable="false">Name</th>
+        <th contenteditable="false">Email</th>
+        <th contenteditable="false">City</th>
+        <th>Delete</th>
+        <th>edit</th>
+        <th contenteditable="false">Images</th>
+
+    </tr>
+</table>
+</div>
+<!-- <div class="btn">
+        <input type="button" id="del" onclick="del()" value="Delete">
+      <br>  <br><input type="button" id="edit" onclick="edit()" value="Edit">
+    </div> -->
+
+<script src="/home/sm.goel/training/project/script/custom.js"></script>
+
+</body>
+</html>
+
