@@ -1,17 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-      <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- <link rel="stylesheet" type="text/css" href="/home/sm.goel/training/project/style/style.css"> -->
 </head> 
@@ -20,20 +10,20 @@
 <fieldset>
     <legend> <h1>Registration Form</h1></legend> 
      <label>Id:-</label> <br>
-        <input type="text" name="id" id="id"><br>
+        <input type="text" name="id" id="id" required><br>
        <label> Name :-</label><br>
-        <input type="text" name="name" id="name"><br>
+        <input type="text" name="name" id="name" required><br>
        <label> Email:-</label><br>
-        <input type="email" name="email" id="email"><br>
-     <label>City:-</label><br>
-        <input type="text" name="city" id="city">
+        <input type="email" name="email" id="email" required> <br>
+        <label>City:-</label><br>
+        <input type="text" name="city" id="city" required>
         <br><br>
         <label>Upload Image</label><br>
-        <input type="file"  accept="image/*" name="image" id="file1">
+        <input type="file"  accept="image/*" name="image" id="file1" required>
         <!-- <input type="file" accept="image/*" id="image" value="upload your image"> -->
         <br><br>
-        <input type="reset" class="btn" id="reset" name="reset">
-        <input type="button"  class="btn" id="submit" onclick="regform()" value="Submit">
+        <input type="reset" id="reset" name="reset">
+        <input type="button" id="submit" onclick value="Submit">
 </fieldset>
 </form>
 <p id="demo"></p>
@@ -46,8 +36,8 @@
         <th>City</th>
     </tr>
 </table> -->
-<div class="container">
-<table class="table table-striped table-bordered" id="mytable">
+<div>
+<table id="mytable">
     <tr>
          <th contenteditable="false">Id</th>
         <th contenteditable="false">Name</th>
@@ -65,7 +55,7 @@
       <br>  <br><input type="button" id="edit" onclick="edit()" value="Edit">
     </div> -->
 
-<script src="/home/sm.goel/training/project/script/custom.js"></script>
+<script src="/home/sm.goel/training/project/customjq.js"></script>
 
 </body>
 </html>

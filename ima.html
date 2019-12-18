@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+<body>
+    <h1>hiiii</h1>
+<img src="assests/flower.jpg" alt="flowerssss">
+</body>
+
+
+    </html>
+    if(id1==""){
+        alert("enter the id");
+        
+        return false;
+    }
+    if(name1==""){
+        alert("enter the name");
+        
+        return false;
+    }
+    if(email1==""){
+        alert("enter the email");
+        
+        return false;
+    }
+    if(city1==""){
+        alert("enter the city");
+        
+        return false;
+    }
+    // if(imageM==""){
+    //     window.alert("choose the image");
+        
+    //     return false;
+    // }
+    var letters=/^[A-Za-z]+$/;
+    if(name1.match(letters)){
+        return true;
+    }
+    else{
+        alert("enter only alphabets");
+        return false;
+    }
